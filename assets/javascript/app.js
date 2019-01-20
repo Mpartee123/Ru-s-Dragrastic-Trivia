@@ -1,4 +1,6 @@
 // define an array of objects with answers
+var numberCorrect = 0;
+document.getElementById('correct-answers').innerText = numberCorrect;
 
 var myQuestions = [
     {
@@ -10,9 +12,9 @@ var myQuestions = [
         },
         correctAnswer: 0,
         image: {
-            0 : url=('./assets/images/Bebe.gif'),
-            1 : url=('./assets/images/Akashia.gif'),
-            2 : url=('./assets/images/Shannel.gif')
+            0: url = ('./assets/images/Bebe.gif'),
+            1: url = ('./assets/images/Akashia.gif'),
+            2: url = ('./assets/images/Shannel.gif')
 
         }
     },
@@ -41,21 +43,30 @@ function questionBuilder(questionNumber) {
     console.log(len);
 
     for (var i = 0; i < len; i++) {
-        var answers = $("<div class='populatedAnswer'>");
         var answerIndex = i;
-        answers.attr("answer-index", i);
-        var currentAnswer = $("<h2></h2>").text(myQuestions[questionNumber].answers[answerIndex]);
-        var picture = $("<img>").attr("src", myQuestions[questionNumber].image[answerIndex]);
+        var answers = $("<div class=' col-md-auto card populatedAnswer'>").attr("answer-index", i);
+        var image = $("<img class='card-img img-responsive'>").attr("src", myQuestions[questionNumber].image[answerIndex]);
+        answers.append(image);
+        var cardImageOverlay = ($("<div class='card-img-overlay'></div>").attr("title-index", [i]));
+        cardImageOverlay.append($("<h2 class='card-title'></h2>").text(myQuestions[questionNumber].answers[answerIndex]));
+        answers.append(cardImageOverlay);
         console.log(myQuestions[questionNumber].answers[answerIndex]);
-// assign radio buttons to each element ;
-//         var radioBtn = $('<input type="radio" name="rbtnCount" />');
-        // $("#answers").append(answers, currentAnswer, radioBtn);
-        $("#answers").append(answers, currentAnswer,picture);
+        $("#answers").append(answers);
+        console.log(answerIndex);
     }
 }
 
 
 questionBuilder(0);
+
+// todo ui should start with populating first object using the question builder function
+
+//todo once proper card has been selected ui should tally score and refresh card with new question
+
+//todo once all questions have been answered score should populate
+
+//todo add timer functionality
+
 
 // $(".populatedAnswer").on("click",function () {
 //     if (){}
