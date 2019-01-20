@@ -1,4 +1,5 @@
 // define an array of objects with answers
+
 var myQuestions = [
     {
         question: "Who won the first season of Drag Race?",
@@ -7,7 +8,13 @@ var myQuestions = [
             1: "Akashia",
             2: "Shannel"
         },
-        correctAnswer: 0
+        correctAnswer: 0,
+        image: {
+            0 : url=('./assets/images/Bebe.gif'),
+            1 : url=('./assets/images/Akashia.gif'),
+            2 : url=('./assets/images/Shannel.gif')
+
+        }
     },
 
     {
@@ -34,50 +41,33 @@ function questionBuilder(questionNumber) {
     console.log(len);
 
     for (var i = 0; i < len; i++) {
-        var answers = $("<div>");
+        var answers = $("<div class='populatedAnswer'>");
         var answerIndex = i;
+        answers.attr("answer-index", i);
         var currentAnswer = $("<h2></h2>").text(myQuestions[questionNumber].answers[answerIndex]);
+        var picture = $("<img>").attr("src", myQuestions[questionNumber].image[answerIndex]);
         console.log(myQuestions[questionNumber].answers[answerIndex]);
 // assign radio buttons to each element ;
-        var radioBtn = $('<input type="radio" name="rbtnCount" />');
-        $("#answers").append(answers, currentAnswer, radioBtn);
+//         var radioBtn = $('<input type="radio" name="rbtnCount" />');
+        // $("#answers").append(answers, currentAnswer, radioBtn);
+        $("#answers").append(answers, currentAnswer,picture);
     }
 }
 
 
 questionBuilder(0);
 
-function showResults() {
-    // gather answer containers from our quiz
-    var answerContainers = quizContainer.querySelectorAll(".answers");
+// $(".populatedAnswer").on("click",function () {
+//     if (){}
+//     else(){}
+// });
 
-    // keep track of user's answers
-    var numCorrect = 0;
-
-    // for each question...
-    myQuestions.forEach((currentQuestion, questionNumber) => {
-        // find selected answer
-        var answerContainer = answerContainers[questionNumber];
-        var selector = `input[name=question${questionNumber}]:checked`;
-        var userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-        // if answer is correct
-        if (userAnswer === currentQuestion.correctAnswer) {
-            // add to the number of correct answers
-            numCorrect++;
-
-            // color the answers green
-            answerContainers[questionNumber].style.color = "lightgreen";
-        } else {
-            // if answer is wrong or blank
-            // color the answers red
-            answerContainers[questionNumber].style.color = "red";
-        }
-    });
-}
-
-
+// count radio buttons that have been selected
 // use a function to count answers and display to correct answers variable.
+
+
+// make a function that detects when an answer is clicked and send the proper information to the proper string.
+
 
 
 
