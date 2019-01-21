@@ -1,25 +1,33 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>The HTML5 Herald</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  </head>
 
-</head>
-<body>
-<h1>Number of correct answers:</h1>
-<div id="correct-answers"></div>
+  <body>
 
-<div id="question"></div>
-<div class="row" id="answers"></div>
+    <div id="card">
+      <h1>RuPaul's Dragalicious Diva Trivia Game</h1>
+      <div id="sub-wrapper">
+        <div class="card-body" id="game-board">
+          <button id="start">Start</button>
+        </div>
+      </div>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="assets/javascript/app.js"></script>
-</body>
+    <!-- Script -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+  </body>
+
 </html>
