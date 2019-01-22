@@ -65,7 +65,7 @@ var game = {
 
         panel.html("<h2 class='question'>" + questions[this.currentQuestion].question + "</h2>");
 
-        panel.append($('<div class="row"></div>'));
+        panel.append($('<div class="row justify-content-center"></div>'));
 
         for (var i = 0; i < questions[this.currentQuestion].answers.length; i++) {
             var answers = $("<div class='col-auto'>");
@@ -93,7 +93,7 @@ var game = {
 
         panel.html("<h2>You Outta Time Gurl!</h2>");
         panel.append("<h3>Now That's Shade: " + questions[this.currentQuestion].correctAnswer);
-        panel.append("<img src='" + questions[this.currentQuestion].image + "' />");
+        panel.append("<img  class='gif' src='" + questions[this.currentQuestion].image + "' />");
 
         if (game.currentQuestion === questions.length - 1) {
             setTimeout(game.results, 3 * 1000);
@@ -106,7 +106,7 @@ var game = {
 
         clearInterval(timer);
 
-        panel.html("<h2>I Dont Know Why Yall Gagging?? She Bring It To You Every Ball</h2>");
+        panel.html("<h2>I Dont Know Why Yall Gagging?? She Bring It To You Every Ball...</h2>");
 
         $("#time-counter").html(game.time);
 
@@ -133,8 +133,8 @@ var game = {
         clearInterval(timer);
 
         panel.html("<h2>Really Girl??</h2>");
-        panel.append("<h3>Here's A Bit Of Herstry Darling... " + questions[game.currentQuestion].correctAnswer + "</h3>");
-        panel.append("<img src='" + questions[game.currentQuestion].image + "' />");
+        panel.append("<h3>Here's A Bit Of Herstory Darling... " + questions[game.currentQuestion].correctAnswer + "</h3>");
+        panel.append("<img class='gif' src='" + questions[game.currentQuestion].image + "' />");
 
         if (game.currentQuestion === questions.length - 1) {
             setTimeout(game.results, 3 * 1000);
@@ -150,7 +150,7 @@ var game = {
         game.correct++;
 
         panel.html("<h2>Shantay You Stay Kitty Girl!!</h2>");
-        panel.append("<img src='" + questions[game.currentQuestion].image + "' />");
+        panel.append("<img class='gif' src='" + questions[game.currentQuestion].image + "' />");
 
         if (game.currentQuestion === questions.length - 1) {
             setTimeout(game.results, 3 * 1000);
