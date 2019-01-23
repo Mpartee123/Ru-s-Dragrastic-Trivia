@@ -4,7 +4,7 @@ This project is a fun game to test your knowledge of the
 queens Rupaul's Drag race.
 
 This trivia game serves no other purpose but to delve deep into the recesses
-on senseless trivia you have stored in that grey matter of yours!
+of senseless trivia you have stored in that grey matter of yours!
 
 You can get started by selecting the start button and clicking the picture of the queen that you think is the correct answer.
 
