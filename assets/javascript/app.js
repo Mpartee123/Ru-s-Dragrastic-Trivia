@@ -2,6 +2,10 @@ var panel = $("#game-board");
 var countStartNumber = 30;
 
 // Question set
+var mainPicture = {
+    image: ['./assets/images/yara.jpeg'],
+};
+
 var questions = [
     {
         question: "Who won the first season of Drag Race?",
@@ -32,11 +36,25 @@ var questions = [
         questionImage: ['./assets/images/kenya.jpeg', './assets/images/willam.jpeg', './assets/images/sharon.jpeg']
     },
     {
-        question: "Who impersonated Michael Jackson in Snatch Game??",
+        question: "Who impersonated Michael Jackson in Snatch Game?",
         answers: ["Naomi Smalls", "Acid Betty", "Thorgy Thor"],
         correctAnswer: "Thorgy Thor",
         image: './assets/images/thorgy.gif',
         questionImage: ['./assets/images/naomi.jpeg', './assets/images/acid.jpeg', './assets/images/thorgy.jpeg']
+    },
+    {
+        question: "Detox sashayed away after lip syncing against who?",
+        answers: ["Jinkx Monsoon", "Roxxxy Andrews", "Coco Montrese"],
+        correctAnswer: "Jinkx Monsoon",
+        image: './assets/images/jinkx.gif',
+        questionImage: ['./assets/images/jinkx.jpeg', './assets/images/roxy.png', './assets/images/coco.jpg']
+    },
+    {
+        question: "Who didn't know the words to Greedy by Ariana Grande?",
+        answers: ["Valentina", "Farrah Moan", "Shea Couleé"],
+        correctAnswer: "Valentina",
+        image: './assets/images/valentina.gif',
+        questionImage: ['./assets/images/valentina.jpg', './assets/images/farrah.jpg', './assets/images/shea.jpg']
     },
 ];
 
@@ -60,6 +78,7 @@ var game = {
     },
 
     questionBuilder: function () {
+        $( ".main-pic" ).remove();
 
         timer = setInterval(game.countdown, 1000);
 
